@@ -320,6 +320,41 @@
   }
   .tabard-frame img:hover { transform: translateY(-4px) rotate(-1deg); }
 
+  /* ---------- Discord ---------- */
+  #discord { display: flex; flex-direction: column; }
+  .icon-svg {
+    display: grid; place-items: center;
+    color: var(--gold-bright);
+    background: radial-gradient(circle at 40% 35%, #2a3a40, #10181c 75%);
+  }
+  .icon-svg svg { width: 34px; height: 34px; }
+  .discord-lead {
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: .06em;
+    text-align: center;
+  }
+  .discord-body {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    padding-top: 1rem;
+  }
+  .discord-frame {
+    padding: .6rem;
+    border-radius: 6px;
+    background: radial-gradient(ellipse at center, rgba(214,168,74,.25), transparent 70%);
+  }
+  .discord-frame img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    filter: drop-shadow(0 10px 16px rgba(60,35,10,.45));
+    transition: transform .4s ease;
+  }
+  .discord-frame img:hover { transform: translateY(-4px) rotate(1deg); }
+
   /* ---------- Footer ---------- */
   footer {
     text-align: center;
@@ -614,6 +649,7 @@
       <a href="#organization">Organization</a>
       <a href="#rules">Rules</a>
       <a href="#tabard">Tabard</a>
+      <a href="#discord">Discord</a>
     </nav>
   </header>
 
@@ -624,7 +660,7 @@
         <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_map02.jpg" alt="" width="56" height="56">
         <h2>What We Do</h2>
       </div>
-      <p>We're social and like RP. A place to chat, find people for dungeons, and ask for help. We help each other out whenever we can!</p>
+      <p>We're social and like RP. A place to chat, find people for dungeons or RP, and ask for help. We help each other out whenever we can!</p>
       <p>Eventually some of us want to raid too, whether as full guild runs or semi pugging.</p>
       <div class="pills">
         <span class="pill">Social</span>
@@ -633,7 +669,7 @@
         <span class="pill">Raiding (soon)</span>
       </div>
       <p class="ink-hint">Some words reveal themselves to those who look closely.</p>
-      <p class="invisible-ink">The compass knows more than it shows.</p>
+      <p class="invisible-ink">The compass knows more than it shows. Ask it five times.</p>
     </section>
 
     <section class="card" id="rules">
@@ -688,7 +724,7 @@
       </ol>
     </section>
 
-    <section class="card wide" id="tabard">
+    <section class="card" id="tabard">
       <div class="card-head">
         <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/inv_shirt_guildtabard_01.jpg" alt="" width="56" height="56">
         <h2>Tabard</h2>
@@ -696,6 +732,27 @@
       <div class="tabard-body">
         <div class="tabard-frame">
           <img src="https://cdn.imgchest.com/files/22ef29c7d5a4.png" alt="The Wayfinders guild tabard" width="258" height="456">
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="discord">
+      <div class="card-head">
+        <div class="icon icon-svg" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h12A2.5 2.5 0 0 1 21 7.5v7a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 3.5V17A2.5 2.5 0 0 1 4 14.5z"/>
+            <path d="M24 11h1.5A2.5 2.5 0 0 1 28 13.5v7a2.5 2.5 0 0 1-2.5 2.5H25v3.5L20.5 23H15a2.5 2.5 0 0 1-2.5-2.5V20"/>
+            <circle cx="8.5" cy="11" r=".6" fill="currentColor"/>
+            <circle cx="12.5" cy="11" r=".6" fill="currentColor"/>
+            <circle cx="16.5" cy="11" r=".6" fill="currentColor"/>
+          </svg>
+        </div>
+        <h2>Discord</h2>
+      </div>
+      <p class="discord-lead">We have one!</p>
+      <div class="discord-body">
+        <div class="discord-frame">
+          <img src="https://cdn.imgchest.com/files/eeaa530c6ca9.png" alt="The Wayfinders Discord">
         </div>
       </div>
     </section>

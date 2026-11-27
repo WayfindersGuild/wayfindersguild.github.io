@@ -397,6 +397,37 @@
     padding-left: 1.4rem;
     border-left: 3px double rgba(138,100,32,.6);
   }
+  .card p.rule-next { margin-top: 1.6rem; }
+  .rules-image {
+    margin-top: 1.6rem;
+    display: flex; justify-content: center;
+  }
+  .rules-image img {
+    display: block;
+    max-width: 50%;
+    height: auto;
+    border-radius: 4px;
+    filter: drop-shadow(0 10px 16px rgba(60,35,10,.45));
+  }
+
+  /* What We Do: raiding and roleplay details */
+  .info-block {
+    margin-top: 1.4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(138,100,32,.4);
+  }
+  .info-block p + p { margin-top: 1rem; }
+  .info-label {
+    display: block;
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: .2rem;
+  }
+
   .seal {
     display: flex; align-items: center; gap: .8rem;
     margin-top: 1.5rem;
@@ -815,12 +846,15 @@
         <h2>What We Do</h2>
       </div>
       <p>We're social and like RP. A place to chat, find people for dungeons, and ask for help. We help each other out whenever we can!</p>
-      <p>Eventually some of us want to raid too, whether as full guild runs or semi pugging.</p>
       <div class="pills">
         <span class="pill">Social</span>
         <span class="pill">Casual RP</span>
         <span class="pill">Dungeons</span>
         <span class="pill">Raiding (soon)</span>
+      </div>
+      <div class="info-block">
+        <p><span class="info-label">Raiding</span>We will raid one night a week with a committed core roster, filling the biggest raids with pugs. We will use Master Looter, where everyone who contributes can roll on upgrades. Our PvE officers have lots of raiding experience, and will make sure every roll is legit, but in Forever we keep things casual, fun and fair! A poll will decide whether we will raid Mondays or Tuesdays, starting time between 19.00–20.00 server time.</p>
+        <p><span class="info-label">Roleplay</span>Being casual roleplayers, we host the occasional event, with no previous RP experience needed. We also share other events in our Discord if they fit the guild's theme.</p>
       </div>
       <p class="ink-hint">Some words reveal themselves to those who look closely.</p>
       <p class="invisible-ink">The compass knows more than it shows.</p>
@@ -892,6 +926,11 @@
       </div>
       <p class="rule">Keep the chat friendly and respectful.</p>
       <p>Map Holders and above may remove anyone who doesn't uphold that standard, and add them to Santa's naughty list.</p>
+      <p class="rule rule-next">Bring a positive, drama-free attitude to raids.</p>
+      <p>We want our Forever experiences to be the best they can be, and part of that is not stressing too much over loot or performance. Our officers work hard to keep things fair under our rules, and joining the raid means you share our views!</p>
+      <div class="rules-image">
+        <img src="https://cdn.imgchest.com/files/d4cf8d023a3d.png" alt="">
+      </div>
       <div class="seal">
         <div class="seal-mark" aria-hidden="true">W</div>
         <span>Sealed by the Royal Nuisance</span>

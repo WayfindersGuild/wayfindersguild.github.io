@@ -506,6 +506,182 @@
   }
   .discord-frame img:hover { transform: translateY(-4px) rotate(1deg); }
 
+  /* ---------- Join Us (application form) ---------- */
+  .apply-intro { margin-bottom: 1.4rem; }
+  .apply-form { display: grid; gap: 1.5rem; }
+  .field { display: grid; gap: .45rem; border: 0; min-width: 0; align-content: start; }
+  .field-label, .field legend {
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: .05em;
+    color: var(--ink);
+    padding: 0;
+  }
+  .field-hint {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: .95rem;
+    letter-spacing: 0;
+    color: var(--ink-soft);
+    margin-left: .35rem;
+  }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .apply-form input[type="text"],
+  .apply-form textarea {
+    width: 100%;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--ink);
+    background: rgba(255,250,230,.55);
+    border: 1px solid rgba(138,100,32,.5);
+    border-radius: 3px;
+    padding: .6rem .8rem;
+    box-shadow: inset 0 2px 5px rgba(120,80,30,.12);
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .apply-form textarea { min-height: 120px; resize: vertical; line-height: 1.5; }
+  .apply-form input[type="text"]:focus,
+  .apply-form textarea:focus {
+    outline: none;
+    background: rgba(255,252,240,.8);
+    border-color: var(--gold-dark);
+    box-shadow: 0 0 0 3px rgba(214,168,74,.35), inset 0 2px 5px rgba(120,80,30,.1);
+  }
+  .apply-form ::placeholder { color: rgba(90,67,48,.55); font-style: italic; }
+
+  /* Tick boxes styled as parchment chips */
+  .choices { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .15rem; }
+  .choice { position: relative; cursor: pointer; }
+  .choice input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .choice span {
+    display: inline-flex; align-items: center; gap: .5rem;
+    font-family: "Cinzel", serif;
+    font-size: .85rem;
+    letter-spacing: .08em;
+    color: var(--ink-soft);
+    padding: .5rem 1rem;
+    border: 1px solid rgba(90,67,48,.45);
+    border-radius: 999px;
+    background: rgba(255,250,230,.4);
+    transition: all .2s ease;
+  }
+  .choice span::before {
+    content: "";
+    width: .7rem; height: .7rem;
+    border: 1px solid var(--gold-dark);
+    transform: rotate(45deg);
+    border-radius: 1px;
+    transition: all .2s ease;
+  }
+  .choice:hover span { border-color: var(--gold-dark); }
+  .choice input:checked + span {
+    color: var(--ink);
+    background: linear-gradient(180deg, rgba(243,207,114,.6), rgba(214,168,74,.45));
+    border-color: var(--gold-dark);
+  }
+  .choice input:checked + span::before { background: #7a1c14; border-color: #7a1c14; }
+  .choice input:focus-visible + span { box-shadow: 0 0 0 3px rgba(214,168,74,.5); }
+
+  .agree {
+    display: flex; align-items: flex-start; gap: .7rem;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .agree input {
+    flex: none;
+    width: 1.15rem; height: 1.15rem;
+    margin-top: .3rem;
+    accent-color: #7a1c14;
+  }
+  .agree a { color: #7a1c14; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+  .field-error {
+    font-style: italic;
+    font-size: 1rem;
+    color: #8c2f2f;
+    display: none;
+  }
+  .field.invalid .field-error { display: block; }
+
+  .botcheck { display: none !important; }
+
+  .apply-submit-row { display: flex; justify-content: center; padding-top: .4rem; }
+  .seal-btn {
+    display: inline-flex; align-items: center; gap: .8rem;
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #f4d3a0;
+    padding: .85rem 1.8rem .85rem 1rem;
+    border: 0;
+    border-radius: 999px;
+    background: radial-gradient(circle at 30% 30%, #c44a3a, #7a1c14 75%);
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,.35), 0 6px 14px rgba(60,20,10,.4);
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .seal-btn .seal-dot {
+    width: 34px; height: 34px;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #d4604e, #8a2318 70%);
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,.4), 0 0 0 2px rgba(244,211,160,.35);
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+  .seal-btn:hover, .seal-btn:focus-visible {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,.35), 0 10px 20px rgba(60,20,10,.45), 0 0 0 3px rgba(214,168,74,.45);
+    outline: none;
+  }
+  .seal-btn[disabled] { opacity: .7; cursor: wait; transform: none; }
+
+  .apply-status {
+    text-align: center;
+    font-style: italic;
+    color: #8c2f2f;
+    min-height: 1.2em;
+  }
+  .apply-thanks {
+    display: none;
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+  }
+  .apply-thanks.show { display: block; animation: slideIn .5s ease; }
+  .apply-thanks .big-seal {
+    width: 84px; height: 84px;
+    margin: 0 auto 1.2rem;
+    display: grid; place-items: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #c44a3a, #7a1c14 70%);
+    box-shadow: inset 0 -4px 8px rgba(0,0,0,.4), 0 6px 14px rgba(60,20,10,.4);
+    color: #f4d3a0;
+    font-family: "Cinzel", serif;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+  .apply-thanks h3 {
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: .06em;
+    color: var(--ink);
+    margin-bottom: .6rem;
+  }
+  .apply-thanks p { color: var(--ink-soft); max-width: 480px; margin: 0 auto; }
+
+  nav a.nav-apply { border-color: rgba(196,74,58,.7); }
+
+  @media (max-width: 600px) {
+    .field-row { grid-template-columns: 1fr; }
+  }
+
   /* ---------- Footer ---------- */
   footer {
     text-align: center;
@@ -832,6 +1008,7 @@
       <a href="#rules">Rules</a>
       <a href="#tabard">Tabard</a>
       <a href="#discord">Discord</a>
+      <a href="#apply" class="nav-apply">Join Us</a>
     </nav>
   </header>
 
@@ -894,7 +1071,7 @@
         <li class="rank">
           <span class="tier">II</span>
           <span class="name">Member</span>
-          <span class="desc">In the guild for 7+ days. The Wayfinder's vault opens!</span>
+          <span class="desc">In the guild for 7+ days.</span>
         </li>
         <li class="rank">
           <span class="tier">III</span>
@@ -927,7 +1104,7 @@
       <p class="rule">Keep the chat friendly and respectful.</p>
       <p>Map Holders and above may remove anyone who doesn't uphold that standard, and add them to Santa's naughty list.</p>
       <p class="rule rule-next">Bring a positive, drama-free attitude to raids.</p>
-      <p>We want our Forever experiences to be the best they can be, and for us, that means charting a fun, relaxed path through the raids without stressing too much over loot or performance. Our officers work hard to keep things fair under our rules, and joining the raid means you share our views!</p>
+      <p>We want our Forever experiences to be the best they can be, and part of that is not stressing too much over loot or performance. Our officers work hard to keep things fair under our rules, and joining the raid means you share our views on that!</p>
       <div class="rules-image">
         <img src="https://cdn.imgchest.com/files/d4cf8d023a3d.png" alt="">
       </div>
@@ -961,6 +1138,83 @@
         <div class="discord-frame">
           <img src="https://cdn.imgchest.com/files/eeaa530c6ca9.png" alt="The Wayfinders Discord">
         </div>
+      </div>
+    </section>
+
+    <section class="card" id="apply">
+      <div class="card-head">
+        <img class="icon" src="https://wow.zamimg.com/images/wow/icons/large/vas_guildnamechange.jpg" alt="" width="56" height="56">
+        <h2>Join Us</h2>
+      </div>
+      <p class="apply-intro">Think you'd make a fine Wayfinder? Fill in the letter below and it will be sent straight to the Map Holders.</p>
+
+      <form class="apply-form" id="apply-form" novalidate>
+        <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
+
+        <div class="field-row">
+          <div class="field" data-required>
+            <label class="field-label" for="f-name">Character name</label>
+            <input type="text" id="f-name" name="Character name" autocomplete="off" required>
+            <span class="field-error">Please tell us your character's name.</span>
+          </div>
+          <div class="field">
+            <label class="field-label" for="f-discord">Discord name <span class="field-hint">(optional)</span></label>
+            <input type="text" id="f-discord" name="Discord name" autocomplete="off">
+          </div>
+        </div>
+
+        <fieldset class="field" data-group="interests">
+          <legend>What are you interested in? <span class="field-hint">Tick one or more</span></legend>
+          <div class="choices">
+            <label class="choice"><input type="checkbox" name="interest" value="Social"><span>Social</span></label>
+            <label class="choice"><input type="checkbox" name="interest" value="RP"><span>RP</span></label>
+            <label class="choice"><input type="checkbox" name="interest" value="Dungeons"><span>Dungeons</span></label>
+            <label class="choice"><input type="checkbox" name="interest" value="Raids"><span>Raids</span></label>
+          </div>
+          <span class="field-error">Please tick at least one.</span>
+        </fieldset>
+
+        <fieldset class="field" data-group="level">
+          <legend>What level range is your character in? <span class="field-hint">Tick one</span></legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="level" value="1-30"><span>1–30</span></label>
+            <label class="choice"><input type="radio" name="level" value="30-40"><span>30–40</span></label>
+            <label class="choice"><input type="radio" name="level" value="40-50"><span>40–50</span></label>
+            <label class="choice"><input type="radio" name="level" value="50-60"><span>50–60</span></label>
+          </div>
+          <span class="field-error">Please pick a level range.</span>
+        </fieldset>
+
+        <div class="field" data-required>
+          <label class="field-label" for="f-wayfinder">In what way is your character a Wayfinder?</label>
+          <textarea id="f-wayfinder" name="In what way is your character a Wayfinder?" required></textarea>
+          <span class="field-error">Please answer this one.</span>
+        </div>
+
+        <div class="field" data-required>
+          <label class="field-label" for="f-bring">What would you bring to the guild?</label>
+          <textarea id="f-bring" name="What would you bring to the guild?" required></textarea>
+          <span class="field-error">Please answer this one.</span>
+        </div>
+
+        <div class="field" data-group="agree">
+          <label class="agree">
+            <input type="checkbox" id="f-agree" name="agree">
+            <span>I have read the <a href="#what-we-do" class="goto">What We Do</a> and <a href="#rules" class="goto">Rules</a> pages.</span>
+          </label>
+          <span class="field-error">Please read and tick this before sending.</span>
+        </div>
+
+        <div class="apply-submit-row">
+          <button type="submit" class="seal-btn" id="apply-send"><span class="seal-dot" aria-hidden="true">W</span><span class="seal-text">Seal &amp; Send</span></button>
+        </div>
+        <p class="apply-status" id="apply-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="apply-thanks" id="apply-thanks" role="status" aria-live="polite">
+        <div class="big-seal" aria-hidden="true">W</div>
+        <h3>Your letter has been sealed and sent!</h3>
+        <p>The Map Holders will read it and get back to you soon. Safe travels until then, Wayfinder.</p>
       </div>
     </section>
 
@@ -1091,11 +1345,22 @@
     });
   });
 
+  // Links inside boxes that point to another box
+  document.querySelectorAll('a.goto').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var i = indexOfId(a.getAttribute('href').slice(1));
+      if (i === -1) return;
+      e.preventDefault();
+      show(i);
+      slider.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
   // Keyboard arrows (when the riddle scroll isn't open and not typing)
   document.addEventListener('keydown', function (e) {
     if (document.getElementById('scroll').classList.contains('open')) return;
     var tag = (e.target.tagName || '').toLowerCase();
-    if (tag === 'input' || tag === 'textarea') return;
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
     if (e.key === 'ArrowLeft') show(current - 1, { dir: -1 });
     if (e.key === 'ArrowRight') show(current + 1, { dir: 1 });
   });
@@ -1103,6 +1368,7 @@
   // Swipe on phones
   var sx = null, sy = null;
   slider.addEventListener('touchstart', function (e) {
+    if (e.target.closest('input, textarea, label')) { sx = sy = null; return; }
     sx = e.touches[0].clientX; sy = e.touches[0].clientY;
   }, { passive: true });
   slider.addEventListener('touchend', function (e) {
@@ -1119,6 +1385,104 @@
   var start = indexOfId(location.hash.slice(1));
   show(start === -1 ? 0 : start, { updateHash: false });
   if (start !== -1) slider.scrollIntoView();
+})();
+
+/* ---------- Join Us form (sends to email via Web3Forms) ---------- */
+(function () {
+  var ACCESS_KEY = 'ebbeeca3-0dd0-4ad1-98c9-34b455a32ae5';
+  var form = document.getElementById('apply-form');
+  var sendBtn = document.getElementById('apply-send');
+  var status = document.getElementById('apply-status');
+  var thanks = document.getElementById('apply-thanks');
+
+  function valueOf(id) { return document.getElementById(id).value.trim(); }
+  function checked(name) {
+    return Array.prototype.slice.call(form.querySelectorAll('input[name="' + name + '"]:checked'))
+      .map(function (i) { return i.value; });
+  }
+  function mark(el, bad) { el.classList.toggle('invalid', bad); return !bad; }
+
+  function validate() {
+    var ok = true, first = null;
+    form.querySelectorAll('.field[data-required]').forEach(function (f) {
+      var input = f.querySelector('input, textarea');
+      var good = mark(f, !input.value.trim());
+      if (!good && !first) first = input;
+      ok = ok && good;
+    });
+    var groups = {
+      interests: checked('interest').length > 0,
+      level: checked('level').length > 0,
+      agree: document.getElementById('f-agree').checked
+    };
+    Object.keys(groups).forEach(function (g) {
+      var f = form.querySelector('[data-group="' + g + '"]');
+      var good = mark(f, !groups[g]);
+      if (!good && !first) first = f.querySelector('input');
+      ok = ok && good;
+    });
+    if (first) first.focus();
+    return ok;
+  }
+
+  // Clear an error as soon as it's fixed
+  form.addEventListener('input', function (e) {
+    var f = e.target.closest('.field');
+    if (f && f.classList.contains('invalid')) f.classList.remove('invalid');
+  });
+  form.addEventListener('change', function (e) {
+    var f = e.target.closest('.field');
+    if (f && f.classList.contains('invalid')) f.classList.remove('invalid');
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.textContent = '';
+    if (!validate()) {
+      status.textContent = 'A few parts of the letter still need filling in.';
+      return;
+    }
+    if (form.querySelector('.botcheck').checked) return; // bots only
+
+    var name = valueOf('f-name');
+    var data = {
+      access_key: ACCESS_KEY,
+      subject: 'New Wayfinders application: ' + name,
+      from_name: 'Wayfinders Website',
+      'Character name': name,
+      'Discord name': valueOf('f-discord') || '(not given)',
+      'Interested in': checked('interest').join(', '),
+      'Level range': checked('level')[0],
+      'In what way is your character a Wayfinder?': valueOf('f-wayfinder'),
+      'What would you bring to the guild?': valueOf('f-bring'),
+      'Has read What We Do and Rules': 'Yes'
+    };
+
+    sendBtn.disabled = true;
+    sendBtn.querySelector('.seal-text').textContent = 'Sealing…';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res && res.success) {
+          form.style.display = 'none';
+          thanks.classList.add('show');
+        } else {
+          throw new Error(res && res.message);
+        }
+      })
+      .catch(function () {
+        status.textContent = 'The letter could not be sent just now. Please try again in a moment, or reach out to a Map Holder in game.';
+      })
+      .then(function () {
+        sendBtn.disabled = false;
+        sendBtn.querySelector('.seal-text').textContent = 'Seal & Send';
+      });
+  });
 })();
 
 /* ---------- Secret: compass and riddle scroll ---------- */
